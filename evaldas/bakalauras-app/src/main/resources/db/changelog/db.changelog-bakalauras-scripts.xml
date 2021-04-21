@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="initial" author="generated">
+        <preConditions onFail="MARK_RAN">
+        </preConditions>
+        <createSequence sequenceName="BAKALAURAS_SEQ" incrementBy="50" minValue="1" startValue="1"/>
+
+        <createTable tableName="ACCOUNT">
+            <column name="ID" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="PK_ACC"/>
+            </column>
+            <column name="USERNAME" type="VARCHAR2(31)">
+                <constraints unique="true"/>
+            </column>
+            <column name="PASSWORD" type="VARCHAR2(80)"/>
+            <column name="FIRST_NAME" type="VARCHAR2(255)"/>
+            <column name="LAST_NAME" type="VARCHAR2(255)"/>
+            <column name="EMAIL" type="VARCHAR2(31)">
+                <constraints unique="true"/>
+            </column>
+            <column name="COMPANY_CODE" type="VARCHAR2(31)"/>
+            <column name="COMPANY_NAME" type="VARCHAR2(31)"/>
+            <column name="ROLE_TYPE" type="VARCHAR2(31)"/>
+            <column name="PHONE" type="VARCHAR2(31)"/>
+            <column name="ADDRESS" type="VARCHAR2(255)"/>
+            <column name="CREATED" type="TIMESTAMP"/>
+            <column name="UPDATED" type="TIMESTAMP"/>
+
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
